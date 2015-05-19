@@ -8,9 +8,12 @@ var VideoTable = React.createClass({
     render: function() {
 
         var rows = [];
+
         var sortVids = this.props.videos;
+
         // sort video using underscore.js sort function 
         sortVids =  _.sortBy( sortVids , this.props.sortVidsTarget.clickedTitle );
+
         // detect whether to sort ascending or descending 
         if (this.props.sortVidsTarget.sortOrder === 'ascending'){
             sortVids = sortVids.reverse(); 
